@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html class="loading" lang="en" data-textdirection="rtl">
+<!-- BEGIN: Head-->
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta name="description" content="Vuesax admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities.">
+    <meta name="keywords" content="admin template, Vuesax admin template, dashboard template, flat admin template, responsive admin template, web app">
+    <meta name="author" content="PIXINVENT">
+    <?php include('logo.php'); ?>
+     <link href="http://fonts.googleapis.com/earlyaccess/droidarabickufi.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700,300" rel="stylesheet">
+
+    <!-- BEGIN: Vendor CSS-->
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/app-assets/vendors/css/vendors.min.css">
+      <!-- BEGIN: Vendor CSS-->
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/app-assets/vendors/css/vendors.min.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/app-assets/vendors/css/animate/animate.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/app-assets/vendors/css/extensions/sweetalert2.min.css">
+    <!-- BEGIN: Theme CSS-->
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/app-assets/css-rtl/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/app-assets/css-rtl/bootstrap-extended.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/app-assets/css-rtl/colors.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/app-assets/css-rtl/components.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/app-assets/css-rtl/themes/dark-layout.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/app-assets/css-rtl/themes/semi-dark-layout.css">
+
+    <!-- BEGIN: Page CSS-->
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/app-assets/css-rtl/core/menu/menu-types/vertical-menu.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/app-assets/css-rtl/core/colors/palette-gradient.css">
+    <!-- END: Page CSS-->
+
+    <!-- BEGIN: Custom CSS-->
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/../assets/css/style.css">
+    <!-- END: Custom CSS-->
+
+</head>
+<!-- END: Head-->
+
+<!-- BEGIN: Body-->
+
+<body class="vertical-layout vertical-menu-modern 2-columns  navbar-floating footer-static  " data-open="click" data-menu="vertical-menu-modern" data-col="2-columns">
+
+     <?php include('header.php'); ?>
+
+        <div class="content-wrapper">
+            <div class="content-header row"> 
+                <div class="content-header-left col-md-12 col-12 mb-2">
+                    <div class="row breadcrumbs-top">
+                        <div class="col-12">
+                            <h2 class="content-header-title float-right mb-0">التصنيفات</h2>
+                            
+                        </div>
+                    </div>
+                </div>
+              
+            </div>
+            <div class="content-body" dir="rtl">
+                <!-- Basic Inputs start -->
+    <?php /*
+<form method="post" action="add_cat" >  
+                <!-- Input with Icons start -->
+                <section id="input-with-icons">
+                    <div class="row match-height">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    
+                                </div>
+                                <div class="card-content">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            
+												  <div class="col-sm-6 col-12">
+                                                <div class="text-bold-600 font-medium-2 mb-1">
+                                       اضف صنف
+                                                </div>
+                                                <fieldset class="form-group position-relative input-divider-right">
+                                                    <input type="text" name="name" class="form-control" id="iconLeft4" placeholder=" ">
+                                                    <div class="form-control-position">
+                                                        <i class="fa fa-tag"></i>
+                                                    </div>
+                                                </fieldset>
+                                            </div> 
+											<div class="col-sm-6 col-12">
+                                                <div class="text-bold-600 font-medium-2 mb-1">
+                                              <br>
+                                                </div>
+                                                <button type="submit" class="btn btn-primary">  <i class="feather icon-check" style="margin-left:10px"></i>تاكيد</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                       
+                        </div>
+                    </div>
+                </section>
+            </form> */ ?>
+                <!-- Input with Icons end -->
+  <div class="row" id="table-borderless" dir="rtl">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-header">
+                               
+                            </div>
+                            <div class="card-content">
+                               
+                                <div class="table-responsive">
+                                        <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>الفئة</th>
+                                                <th style="width:2%">تعديل</th>
+                                                <th style="width:2%">مسح </th>
+                                                
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?php foreach ($cat as $key) { 
+                                                if ($key->archive != 'oui') { ?>
+                                            <tr>
+                                                <th scope="row"><?php echo $key->id; ?></th>
+                                                <td><?php echo $key->name; ?></td>
+                                           <!-- <td>  <button type="button" class="btn btn-outline-primary mb-2"  data-toggle="modal" data-target="#inlineForm<?php echo $key->id; ?>" >  <i class="feather icon-edit"></i></button></td>
+                                               <td>  <button type="button" class="btn btn-outline-danger mb-2"  data-toggle="modal" data-target="#danger<?php echo $key->id; ?>">  <i class="feather icon-x"></i></button></td>-->
+                                               
+                                            </tr> 
+                                        <?php } } ?>
+                                        
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>  
+                        </div>
+                    </div>   
+                                                   
+
+                                                    <!-- Modal -->
+                                                    <?php foreach ($cat as $key) { ?>
+                                                       <div class="modal fade text-right" id="danger<?php echo $key->id; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel120" aria-hidden="true">
+                                                        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header bg-danger white">
+                                                                    <h5 class="modal-title" id="myModalLabel120"></h5>
+                                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                        <span aria-hidden="true">&times;</span>
+                                                                    </button>
+                                                                </div>
+                                                                <div class="modal-body">
+                                                              
+															   <center> <h1 style="font-size:40px">  <i class="fa fa-trash-o"></i></h1></center>
+															    <center> <h1 style="font-size:30px">  هل انت متأكد?</center> 
+                                                                </div>
+                                                                <div class="modal-footer">
+                                                                    <a href="delete_cat?id=<?php echo $key->id; ?>"><button type="button" class="btn btn-danger" style="margin-left:10px">حذف</button></a>
+																	<button type="button" class="btn btn-outline-danger" data-dismiss="modal">إلغاء</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                <?php } ?>
+                                             
+                </div>     <?php foreach ($cat as $key) { ?>
+                 <div class="modal fade text-right" id="inlineForm<?php echo $key->id; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel33" aria-hidden="true" dir="rtl">
+                                                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                           
+                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                        </div>
+                                                        <form action="update_cat" method="post">
+                                                            <div class="modal-body">
+																<label>الصنف: </label>
+                                                                <div class="form-group">
+                                                                    <input type="hidden" name="id" value="<?php echo $key->id; ?>" >
+                                                                    <input type="text"  name="name" value="<?php echo $key->name; ?>" placeholder="الصنف" class="form-control">
+                                                                </div>
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-primary" data-dismiss="modal">  تعديل</button>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        <?php } ?>
+               
+                <!-- Input Sizing end -->
+
+            </div>
+        </div>
+    </div>
+    <!-- END: Content-->
+
+    <div class="sidenav-overlay"></div>
+    <div class="drag-target"></div>
+
+    <!-- BEGIN: Footer-->
+    <footer class="footer footer-static footer-light">
+        <p class="clearfix blue-grey lighten-2 mb-0"><span class="float-md-left d-block d-md-inline-block mt-25">  &copy; 2019 Smart Service Team</span> 
+            <button class="btn btn-primary btn-icon scroll-top" type="button"><i class="feather icon-arrow-up"></i></button>
+        </p>
+    </footer>
+    <!-- END: Footer-->
+
+
+    <!-- BEGIN: Vendor JS-->
+    <script src="<?php echo base_url(); ?>assets/app-assets/vendors/js/vendors.min.js"></script>
+    <!-- BEGIN Vendor JS-->
+
+    
+
+    <!-- BEGIN: Theme JS-->
+    <script src="<?php echo base_url(); ?>assets/app-assets/js/core/app-menu.js"></script>
+    <script src="<?php echo base_url(); ?>assets/app-assets/js/core/app.js"></script>
+    <script src="<?php echo base_url(); ?>assets/app-assets/js/scripts/components.js"></script>
+    <!-- END: Theme JS-->
+
+    <!-- BEGIN: Page JS-->
+    <script src="<?php echo base_url(); ?>assets/app-assets/js/scripts/forms/form-tooltip-valid.js"></script>
+    <!-- END: Page JS-->
+     <!-- BEGIN: Page Vendor JS-->
+    <script src="<?php echo base_url(); ?>assets/app-assets/vendors/js/extensions/sweetalert2.all.min.js"></script>
+    <script src="<?php echo base_url(); ?>assets/app-assets/vendors/js/extensions/polyfill.min.js"></script>
+	 <!-- BEGIN: Page JS-->
+    <script src="<?php echo base_url(); ?>assets/app-assets/js/scripts/extensions/sweet-alerts.js"></script>
+	   
+    <script src="<?php echo base_url(); ?>assets/app-assets/js/scripts/modal/components-modal.js"></script>
+</body>
+<!-- END: Body-->
+
+</html>
